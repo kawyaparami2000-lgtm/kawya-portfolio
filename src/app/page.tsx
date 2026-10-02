@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { ProjectsSection } from "@/components/ProjectsSection";
 import { profile } from "@/data/profile";
 
 export default function Home() {
@@ -9,13 +10,8 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
 
-        {/* Placeholder Section: Projects */}
-        <section id="projects" className="py-16 border-b border-border-subtle" aria-label="Projects Section">
-          <div className="max-w-5xl mx-auto px-container space-y-4">
-            <h2 className="font-display text-h1 font-bold">Projects</h2>
-            <p className="text-body text-text-muted">Featured AI, QA, and software engineering projects coming soon.</p>
-          </div>
-        </section>
+        {/* Projects Section */}
+        <ProjectsSection />
 
         {/* Placeholder Section: Skills */}
         <section id="skills" className="py-16 border-b border-border-subtle" aria-label="Skills Section">

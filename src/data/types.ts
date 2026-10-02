@@ -5,7 +5,7 @@ export interface Profile {
   location: string;
   email: string;
   githubUrl: string;
-  linkedinUrl?: string; // TODO: Add LinkedIn URL if available
+  linkedinUrl?: string; // TODO: Add LinkedIn URL once available in source material
   cvPath: string;
   seekingRole: string;
 }
@@ -17,11 +17,17 @@ export interface Project {
   summary: string;
   description: string;
   techStack: string[];
-  githubUrl?: string; // TODO: Add GitHub URL if available
-  liveUrl?: string;   // TODO: Add Live URL if available
+  githubUrl?: string; // TODO: Add GitHub URL once provided in links.txt
+  liveUrl?: string;   // TODO: Add Live URL once provided in links.txt
   featured: boolean;
   highlights: string[];
   screenshots: string[];
+  // Optional extended case study fields (only rendered if defined)
+  role?: string;         // TODO: Add detailed role if missing in source material
+  problem?: string;      // TODO: Add detailed problem statement if missing in source material
+  architecture?: string; // TODO: Add detailed architecture overview if missing in source material
+  lessons?: string[];    // TODO: Add key takeaways/lessons if missing in source material
+  gallery?: string[];    // TODO: Add gallery screenshot paths if missing in source material
 }
 
 export interface SkillCategory {
