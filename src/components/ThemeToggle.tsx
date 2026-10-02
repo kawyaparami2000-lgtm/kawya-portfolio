@@ -46,7 +46,7 @@ export function ThemeToggle() {
             onClick={() => setTheme(opt.value)}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-caption font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary ${
               isActive
-                ? "bg-accent-primary text-white"
+                ? "bg-accent-primary text-accent-primary-text"
                 : "text-text-muted hover:text-text-primary hover:bg-bg-surface"
             }`}
           >

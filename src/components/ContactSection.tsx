@@ -322,7 +322,7 @@ export function ContactSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto px-6 py-3 rounded-card bg-accent-primary text-white font-medium text-body inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:outline-none shadow-sm"
+                    className="w-full sm:w-auto px-6 py-3 rounded-card bg-accent-primary text-accent-primary-text font-medium text-body inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:outline-none shadow-sm"
                   >
                     {isSubmitting ? (
                       <>

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { profile } from "@/data/profile";
@@ -46,7 +47,7 @@ export function Hero() {
         <div className="flex flex-wrap items-center gap-4 pt-2">
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-card bg-accent-primary text-white font-medium text-body hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:outline-none"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-card bg-accent-primary text-accent-primary-text font-medium text-body hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:outline-none"
           >
             <span>View projects</span>
             <ArrowDown className="w-4 h-4" />
