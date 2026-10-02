@@ -41,6 +41,6 @@ export interface ExperienceItem {
   organization: string;
   startDate: string;
   endDate: string;
-  bullets: string[];
+  bullets?: string[];
   type: "education" | "work" | "leadership";
 }

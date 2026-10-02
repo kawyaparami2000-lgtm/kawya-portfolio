@@ -1,6 +1,8 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { ProjectsSection } from "@/components/ProjectsSection";
+import { SkillsSection } from "@/components/SkillsSection";
+import { ExperienceSection } from "@/components/ExperienceSection";
 import { profile } from "@/data/profile";
 
 export default function Home() {
@@ -13,21 +15,11 @@ export default function Home() {
         {/* Projects Section */}
         <ProjectsSection />
 
-        {/* Placeholder Section: Skills */}
-        <section id="skills" className="py-16 border-b border-border-subtle" aria-label="Skills Section">
-          <div className="max-w-5xl mx-auto px-container space-y-4">
-            <h2 className="font-display text-h1 font-bold">Skills</h2>
-            <p className="text-body text-text-muted">Technical skills matrix and proficiency overview coming soon.</p>
-          </div>
-        </section>
+        {/* Skills Section */}
+        <SkillsSection />
 
-        {/* Placeholder Section: Experience */}
-        <section id="experience" className="py-16 border-b border-border-subtle" aria-label="Experience Section">
-          <div className="max-w-5xl mx-auto px-container space-y-4">
-            <h2 className="font-display text-h1 font-bold">Experience</h2>
-            <p className="text-body text-text-muted">Education, work experience, and leadership history coming soon.</p>
-          </div>
-        </section>
+        {/* Experience Section */}
+        <ExperienceSection />
 
         {/* Placeholder Section: Contact */}
         <section id="contact" className="py-16 border-b border-border-subtle" aria-label="Contact Section">
