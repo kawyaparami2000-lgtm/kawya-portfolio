@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --bg-surface: #F4F6FB;
+  --text-primary: #0F172A;
+  --text-muted: #475569;
+  --accent-primary: #6366F1;
+  --accent-precision: #0D9488;
+  --border-subtle: #E2E8F0;
+  --card-surface: #FFFFFF;
+}
+
+.dark, [data-theme='dark'] {
+  --bg-surface: #0B0F19;
+  --text-primary: #F1F5F9;
+  --text-muted: #94A3B8;
+  --accent-primary: #818CF8;
+  --accent-precision: #14B8A6;
+  --border-subtle: #1E293B;
+  --card-surface: #111827;
+}
+
+@theme {
+  --color-bg-surface: var(--bg-surface);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-precision: var(--accent-precision);
+  --color-border-subtle: var(--border-subtle);
+  --color-card-surface: var(--card-surface);
+
+  --font-display: var(--font-syne), sans-serif;
+  --font-body: var(--font-jakarta), sans-serif;
+
+  --text-display: 3.25rem;
+  --text-display--line-height: 1.1;
+  --text-h1: 2.25rem;
+  --text-h1--line-height: 1.2;
+  --text-h2: 1.75rem;
+  --text-h2--line-height: 1.25;
+  --text-h3: 1.25rem;
+  --text-h3--line-height: 1.35;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+  --text-body: 1rem;
+  --text-body--line-height: 1.5;
+  --text-caption: 0.875rem;
+  --text-caption--line-height: 1.4;
+
+  --spacing-section: 5rem;
+  --spacing-container: 2rem;
+  --spacing-card: 1.5rem;
+  --spacing-element: 1rem;
+  --spacing-tight: 0.5rem;
+
+  --radius-sharp: 0.125rem;
+  --radius-card: 0.5rem;
+  --radius-pill: 9999px;
+}
+
+* {
+  border-color: var(--border-subtle);
+}
+
+body {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: var(--font-jakarta), sans-serif;
+  min-height: 100vh;
+}
