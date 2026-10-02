@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { WashFlowArchitecture } from "@/components/WashFlowArchitecture";
+import { profile } from "@/data/profile";
 import { ArrowLeft, ArrowRight, Github, ExternalLink, CheckCircle, Cpu } from "lucide-react";
 
 interface PageProps {
@@ -27,9 +28,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
   return {
     title: `${project.title} | Case Study | Kawya Bogoda`,
     description: project.summary,
+    alternates: {
+      canonical: `${baseUrl}/projects/${project.slug}`,
+    },
+    openGraph: {
+      title: `${project.title} | Kawya Bogoda`,
+      description: project.summary,
+      url: `${baseUrl}/projects/${project.slug}`,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Kawya Bogoda`,
+      description: project.summary,
+    },
   };
 }
 
@@ -45,11 +62,30 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
   const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
   const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    name: project.title,
+    description: project.summary,
+    programmingLanguage: project.techStack,
+    author: {
+      "@type": "Person",
+      name: profile.name,
+    },
+    codeRepository: project.githubUrl,
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-bg-surface text-text-primary">
+      {/* CreativeWork / SoftwareSourceCode JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <Header />
 
-      <main className="flex-1 max-w-4xl mx-auto px-container py-12 space-y-12">
+      <main id="main-content" className="flex-1 max-w-4xl mx-auto px-container py-12 space-y-12">
         {/* Back Link */}
         <div>
           <Link
@@ -220,7 +256,9 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
                     src={imgSrc}
                     alt={`${project.title} screenshot ${i + 1}`}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
+                    loading="lazy"
                   />
                 </div>
               ))}
@@ -265,6 +303,13 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           )}
         </nav>
       </main>
+
+      <footer className="py-8 bg-card-surface border-t border-border-subtle">
+        <div className="max-w-5xl mx-auto px-container flex flex-col sm:flex-row items-center justify-between gap-4 text-caption text-text-muted">
+          <p>© {new Date().getFullYear()} {profile.name}. All rights reserved.</p>
+          <p>{profile.location}</p>
+        </div>
+      </footer>
     </div>
   );
 }

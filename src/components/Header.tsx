@@ -104,6 +104,7 @@ export function Header() {
                 <li key={item.href}>
                   <a
                     href={item.href}
+                    aria-current={isActive ? "true" : undefined}
                     className={`font-medium transition-colors focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:outline-none rounded-sharp px-2 py-1 ${
                       isActive
                         ? "text-accent-primary font-semibold"
@@ -155,6 +156,7 @@ export function Header() {
                     <a
                       href={item.href}
                       onClick={closeMobileMenu}
+                      aria-current={isActive ? "true" : undefined}
                       className={`block py-2 px-3 rounded-card text-body font-medium transition-colors focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:outline-none ${
                         isActive
                           ? "bg-accent-primary/10 text-accent-primary font-semibold"
